@@ -1,0 +1,279 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioMedical Innovations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+        :root {
+            --bg: #fdfdfd;
+            --text: #111;
+            --card: #e9ecef;
+        }
+        [data-theme="dark"] {
+            --bg: #121212;
+            --text: #f1f1f1;
+            --card: #1e1e1e;
+        }
+        header {
+            background: #720026;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fd2981;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+        }
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 5px;
+        }
+        .toggle-theme {
+            background: white;
+            color: #720026;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .hero {
+            background: linear-gradient(to bottom right, #720026, #fd2981);
+            color: white;
+            padding: 4rem 2rem;
+            display: flex;
+            #\align-items: #\center;
+            justify-content: center;
+            text-align: left;
+            min-height: 60vh;
+        }
+        .hero-content {
+            animation: fadeInUp 1.5s ease-out;
+            align-items: center;
+            font-size:18px;
+        }
+        .btn-primary {
+            background: white;
+            color: #720026;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .btn-primary:hover {
+            background: #eee;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 1200px;< 
+            margin: auto;
+        }
+        .services, .founders {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .service, .founder {
+            background: var(--card);
+            padding: 1rem;
+            border-radius: 10px;
+            flex: 1 1 calc(33.333% - 2rem);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service:hover, .founder:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        .founder img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+        .hero-svg {
+          width: 50%;
+          height: auto;
+          max-width: 600px;
+          display: block;
+        }
+        .hero h1 {
+          font-size: 5rem;  /* ~48px */
+          font-weight: 800;
+          margin-bottom: 1rem;
+        }
+
+        .hero p {
+          font-size: 2.25rem;  /* ~20px */
+          font-weight: 400;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+        input, textarea {
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #720026;
+        }
+        button[type="submit"] {
+            background: #720026;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #720026;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .service, .founder {
+                flex: 1 1 calc(50% - 2rem);
+            }
+        }
+        @media (max-width: 480px) {
+            .service, .founder {
+                flex: 1 1 100%;
+            }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#founders">Founders</a>
+        <a href="#work">Our Work</a>
+        <a href="#contact">Contact</a>
+        <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
+    </nav>
+    <section class="hero">
+        <object data="Downloads/easy (Copy).svg" type="image/svg+xml" class="hero-svg"></object>
+        <div class="hero-content">
+            <h1>HemoScan Labs</h1>
+            <p>Diagnoising blood stream infections days earlier</p>
+            <a href="#about" class="btn-primary">Learn More</a>
+        </div>
+    </section>
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p>We are a biomedical startup dedicated to creating innovative solutions that bridge the gap between technology and healthcare. Our mission is to enhance patient care and improve medical outcomes through advanced research and development.</p>
+    </section>
+    <section id="services" class="container">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Medical Devices</h3>
+                <p>Developing state-of-the-art medical devices for diagnostics and treatment.</p>
+            </div>
+            <div class="service">
+                <h3>Biotech Research</h3>
+                <p>Innovative research in biotechnology to address global health challenges.</p>
+            </div>
+            <div class="service">
+                <h3>Healthcare IT</h3>
+                <p>Providing software solutions to streamline healthcare operations.</p>
+            </div>
+        </div>
+    </section>
+    <section id="founders" class="container">
+        <h2>Meet Our Founders</h2>
+        <div class="founders">
+            <div class="founder">
+                <img src="founder1.jpg" alt="Founder 1">
+                <h3>Dr. Jane Smith</h3>
+                <p>CEO & Co-Founder</p>
+            </div>
+            <div class="founder">
+                <img src="founder2.jpg" alt="Founder 2">
+                <h3>Dr. John Doe</h3>
+                <p>CTO & Co-Founder</p>
+            </div>
+            <div class="founder">
+                <img src="founder3.jpg" alt="Founder 3">
+                <h3>Dr. Emily White</h3>
+                <p>COO & Co-Founder</p>
+            </div>
+        </div>
+    </section>
+    <section id="work" class="container">
+        <h2>About Our Work</h2>
+        <p>At BioMedical Innovations, we focus on leveraging technology to create impactful solutions in the healthcare industry. Our work spans across various domains, including medical device development, biotechnology research, and healthcare IT solutions. We collaborate with industry leaders and research institutions to bring groundbreaking ideas to life.</p>
+    </section>
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 BioMedical Innovations. All rights reserved.</p>
+    </footer>
+    <script>
+        ScrollReveal().reveal('.service', { delay: 200, distance: '50px', origin: 'bottom' });
+        ScrollReveal().reveal('.founder', { delay: 300, distance: '50px', origin: 'bottom' });
+        ScrollReveal().reveal('.hero-content', { delay: 100, distance: '30px', origin: 'top' });
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+        }
+    </script>
+</body>
+</html>
